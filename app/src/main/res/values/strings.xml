@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Rec</string>
+    <string name="rec">REC</string>
+    <string name="geraldine_garcia_lopez">Geraldine García López</string>
+    <string name="texto_bienvenida">Inicia una nueva aventura con REC y descubre una nueva manera de ver el mundo.</string>
+    <string name="comienza">Comienza</string>
+    <string name="registrate">Regístrate</string>
+    <string name="texto_inicia_sesion">La aventura está por iniciar, por favor inicia sesión</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="recupera_tu_contrasena">Recupera Tu Contraseña</string>
+    <string name="ingresa_con_google">Ingresa con Google</string>
+    <string name="no_tienes_cuenta">No tienes cuenta?</string>
+</resources>
