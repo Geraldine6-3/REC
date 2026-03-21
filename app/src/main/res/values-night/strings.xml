@@ -21,4 +21,15 @@
     <string name="confirmar_contrasena">Confirmar Contraseña</string>
     <string name="t_y_c">Acepto los términos y condiciones</string>
     <string name="ya_tienes_cuenta_inicia_sesion">¿Ya tienes cuenta? Inicia Sesión</string>
+    <string name="inicio">Inicio</string>
+    <string name="catalogo">Catálogo</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="perfil">Perfil</string>
+    <string name="admin">Admin</string>
+    <string name="usuarios">Usuarios</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="imagen_de_usuario">Logo de Usuario</string>
+    <string name="geral">Geral</string>
+    <string name="estudiante">Estudiante</string>
 </resources>

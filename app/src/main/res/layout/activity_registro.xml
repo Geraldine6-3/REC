@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6E6E6"
+    android:background="@color/gris_fondo"
     android:fillViewport="true">
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/crea_tu_cuenta"
-            android:textColor="#F74E51"
+            android:textColor="@color/rojo_coral"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -34,14 +34,14 @@
                 android:src="@drawable/user" />
 
             <EditText
-                android:id="@+id/et_nombres"
+                android:id="@+id/et_nombres_registro"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginStart="15dp"
                 android:background="@drawable/bg_edittext"
                 android:hint="@string/nombres"
                 android:paddingStart="15dp"
-                android:textColor="#000000" />
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -56,14 +56,14 @@
                 android:layout_height="40dp" />
 
             <EditText
-                android:id="@+id/et_apellidos"
+                android:id="@+id/et_apellidos_registro"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginStart="15dp"
                 android:background="@drawable/bg_edittext"
                 android:hint="@string/apellidos"
                 android:paddingStart="15dp"
-                android:textColor="#000000" />
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -76,8 +76,9 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/user" /> <EditText
-            android:id="@+id/et_correo"
+                android:src="@drawable/user" />
+            <EditText
+            android:id="@+id/et_correo_registro"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginStart="15dp"
@@ -85,7 +86,7 @@
             android:hint="@string/correo_electr_nico"
             android:inputType="textEmailAddress"
             android:paddingStart="15dp"
-            android:textColor="#000000" />
+            android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -101,7 +102,7 @@
                 android:src="@drawable/password" />
 
             <EditText
-                android:id="@+id/et_password_reg"
+                android:id="@+id/et_contrasena_registro"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginStart="15dp"
@@ -109,7 +110,7 @@
                 android:hint="@string/contrasena_crear_cuenta"
                 android:inputType="textPassword"
                 android:paddingStart="15dp"
-                android:textColor="#000000" />
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -124,7 +125,7 @@
                 android:layout_height="40dp" />
 
             <EditText
-                android:id="@+id/et_confirm_password"
+                android:id="@+id/et_confirmacontrasena_registro"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginStart="15dp"
@@ -132,7 +133,7 @@
                 android:hint="@string/confirmar_contrasena"
                 android:inputType="textPassword"
                 android:paddingStart="15dp"
-                android:textColor="#000000" />
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <CheckBox
@@ -140,19 +141,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:buttonTint="#F74E51"
+            android:buttonTint="@color/rojo_coral"
             android:text="@string/t_y_c"
-            android:textColor="#000000" />
+            android:textColor="@color/black" />
 
         <Button
-            android:id="@+id/button_registrar"
+            android:id="@+id/btn_registrate"
             android:layout_width="220dp"
             android:layout_height="55dp"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#F74E51"
+            android:backgroundTint="@color/rojo_coral"
             android:text="@string/registrate"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <TextView
@@ -162,7 +163,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:text="@string/ya_tienes_cuenta_inicia_sesion"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
 

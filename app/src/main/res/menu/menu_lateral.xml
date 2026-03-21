@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/side_admin"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="@string/admin" />
+    <item
+        android:id="@+id/side_usuarios"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/usuarios" />
+    <item
+        android:id="@+id/side_config"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/ajustes" />
+    <item
+        android:id="@+id/side_logout"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="@string/cerrar_sesion" />
+</menu>
