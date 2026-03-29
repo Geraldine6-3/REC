@@ -1,21 +1,38 @@
 package com.example.rec.main.productos
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.example.rec.R
 
-class CarritoFragment : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.fragment_carrito)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+class CarritoFragment : Fragment() {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_carrito, container, false)
+
+        // Capturamos los datos
+        val nombre = arguments?.getString("p_nom")
+        val precio = arguments?.getString("p_pre")
+
+        val txtMensaje = view.findViewById<TextView>(R.id.txtMensajeVacio)
+        val btnFinalizar = view.findViewById<Button>(R.id.btnFinalizarCompra)
+
+        if (nombre != null) {
+            txtMensaje.visibility = View.VISIBLE
+            txtMensaje.text = "PRODUCTO EN CARRITO:\n\n$nombre\n$precio"
+
+            txtMensaje.textSize = 20f
+            txtMensaje.setTextColor(resources.getColor(R.color.black))
         }
+
+        btnFinalizar.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+
+        return view
     }
 }

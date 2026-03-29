@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/white"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:id="@+id/imgDetalle"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/camara_de_video" />
+
+    <TextView
+        android:id="@+id/txtNombreDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre_del_equipo"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/txtPrecioDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Precio_detalle"
+        android:textSize="22sp"
+        android:textColor="#2E7D32"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/txtDescDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Descripcion_detallada"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnAgregarCarrito"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/rojo_coral"
+        android:text="@string/agregar_al_carrito" />
+
+</LinearLayout>

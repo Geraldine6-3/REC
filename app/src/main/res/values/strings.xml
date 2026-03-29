@@ -34,4 +34,12 @@
     <string name="imagen_de_usuario">Logo de Usuario</string>
     <string name="geral">Geral</string>
     <string name="estudiante">Estudiante</string>
+    <string name="nombre_del_equipo">Nombre del Equipo</string>
+    <string name="Precio_detalle">$ 0.00</string>
+    <string name="Descripcion_detallada">Descripción detallada del equipo de grabación...</string>
+    <string name="agregar_al_carrito">Añadir al Carrito</string>
+    <string name="texto_favoritos">Aquí verás tus equipos favoritos de Rec</string>
+    <string name="mi_carrito_de_compras">Mi carrito de compras</string>
+    <string name="productos_sin_agregar">Aún no has añadido equipos.</string>
+    <string name="finalizar_compra">Finalizar Compra</string>
 </resources>

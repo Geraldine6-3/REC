@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="rojo_coral">#F74E51</color>
     <color name="gris_fondo">#E6E6E6</color>
+    <color name="verde_precios">#2E7D32</color>
 </resources>
