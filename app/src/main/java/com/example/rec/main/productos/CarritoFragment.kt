@@ -26,7 +26,7 @@ class CarritoFragment : Fragment() {
             txtMensaje.text = "PRODUCTO EN CARRITO:\n\n$nombre\n$precio"
 
             txtMensaje.textSize = 20f
-            txtMensaje.setTextColor(resources.getColor(R.color.black))
+            txtMensaje.setTextColor(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.black))
         }
 
         btnFinalizar.setOnClickListener {
