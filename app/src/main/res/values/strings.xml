@@ -42,4 +42,5 @@
     <string name="mi_carrito_de_compras">Mi carrito de compras</string>
     <string name="productos_sin_agregar">Aún no has añadido equipos.</string>
     <string name="finalizar_compra">Finalizar Compra</string>
+    <string name="ingresar_con_huella">Ingresar con Huella</string>
 </resources>

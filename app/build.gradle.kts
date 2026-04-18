@@ -46,10 +46,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("io.github.jan-tennert.supabase:compose-auth:3.1.4")
+    implementation("com.google.android.gms:play-services-auth:21.1.1")
 
     implementation(platform(libs.supabase.bom))
     implementation(libs.supabase.postgrest)
     implementation(libs.supabase.auth)
     implementation(libs.ktor.client.android)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.biometric)
+
 }

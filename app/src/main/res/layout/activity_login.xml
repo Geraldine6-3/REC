@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/gris_fondo"
     android:gravity="center_horizontal"
     android:orientation="vertical"
@@ -112,6 +113,35 @@
         android:layout_weight="1" />
 
     <LinearLayout
+        android:id="@+id/in_huella"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_edittext"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="visible">
+
+        <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@android:drawable/ic_dialog_info"
+        app:tint="@color/rojo_coral"/>
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ingresar_con_huella"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/IngresaGoogle"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -154,6 +184,7 @@
             android:id="@+id/Registrate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:text="@string/registrate"
             android:textColor="@color/rojo_coral"
             android:textStyle="bold" />
