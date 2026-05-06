@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rec">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.rec.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
 
         <activity
             android:name=".inicio.SplashActivity"
@@ -21,9 +36,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".auth.LoginActivity" android:exported="false" />
-        <activity android:name=".auth.RegistroActivity" android:exported="false" />
-        <activity android:name=".main.MainActivity" android:exported="false" />
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".auth.RegistroActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".main.MainActivity"
+            android:exported="false" />
 
     </application>
+
 </manifest>

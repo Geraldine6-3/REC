@@ -41,4 +41,8 @@
     <string name="productos_sin_agregar">Aún no has añadido equipos.</string>
     <string name="finalizar_compra">Finalizar Compra</string>
     <string name="ingresar_con_huella">Ingresar con Huella</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="nueva_contrasena">Nueva contraseña</string>
+    <string name="guardar_cambios">Guardar Cambios</string>
 </resources>

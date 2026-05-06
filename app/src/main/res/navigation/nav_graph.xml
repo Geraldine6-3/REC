@@ -1,0 +1,53 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <!-- ACCIÓN GLOBAL  -->
+    <action
+        android:id="@+id/action_global_carritoFragment"
+        app:destination="@id/carritoFragment" />
+
+    <!-- HOME -->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.rec.main.productos.HomeFragment"
+        android:label="Inicio" />
+
+    <!-- CATÁLOGO -->
+    <fragment
+        android:id="@+id/nav_catalogo"
+        android:name="com.example.rec.main.productos.CatalogoFragment"
+        android:label="Catálogo" />
+
+    <!-- FAVORITOS -->
+    <fragment
+        android:id="@+id/nav_favoritos"
+        android:name="com.example.rec.main.productos.FavoritosFragment"
+        android:label="Favoritos" />
+
+    <!-- PERFIL -->
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.rec.main.perfil.PerfilFragment"
+        android:label="Perfil">
+
+        <!-- Acción hacia editar perfil -->
+        <action
+            android:id="@+id/action_perfilFragment_to_editarPerfilFragment"
+            app:destination="@id/editarPerfilFragment" />
+    </fragment>
+
+    <!-- EDITAR PERFIL -->
+    <fragment
+        android:id="@+id/editarPerfilFragment"
+        android:name="com.example.rec.main.perfil.EditarPerfilFragment"
+        android:label="Editar Perfil" />
+
+    <!-- CARRITO -->
+    <fragment
+        android:id="@+id/carritoFragment"
+        android:name="com.example.rec.main.productos.CarritoFragment"
+        android:label="Carrito" />
+
+</navigation>

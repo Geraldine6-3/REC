@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
@@ -17,6 +18,7 @@ import com.example.rec.data.CredencialesManager
 import com.example.rec.main.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.auth.providers.Google
 import io.github.jan.supabase.auth.providers.builtin.Email
@@ -29,6 +31,22 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var executor: Executor
     private lateinit var biometricPrompt: BiometricPrompt
     private lateinit var promptInfo: BiometricPrompt.PromptInfo
+
+
+    private val googleLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                val idToken = account?.idToken
+                if (idToken != null) {
+                    completarLoginConSupabaseGoogle(idToken)
+                }
+            } catch (e: ApiException) {
+                Toast.makeText(this, "Error de autenticación: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,55 +120,35 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginConGoogleNativo() {
-
         val myClientId = "438394961355-9p8uulk6ov26vk96i9l1a76luo2gg1sa.apps.googleusercontent.com"
-
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(myClientId)
             .requestEmail()
             .build()
 
         val googleSignInClient = GoogleSignIn.getClient(this, gso)
-
         googleSignInClient.signOut().addOnCompleteListener {
-            val signInIntent = googleSignInClient.signInIntent
-            startActivityForResult(signInIntent, 1001)
+            googleLauncher.launch(googleSignInClient.signInIntent)
         }
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == 1001) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+    private fun completarLoginConSupabaseGoogle(idToken: String) {
+        lifecycleScope.launch {
             try {
-                val account = task.getResult(Exception::class.java)
-                val idToken = account?.idToken
-
-                if (idToken != null) {
-
-                    lifecycleScope.launch {
-                        try {
-                            SupabaseClient.client.auth.signInWith(io.github.jan.supabase.auth.providers.builtin.IDToken) {
-                                this.idToken = idToken
-                                provider = io.github.jan.supabase.auth.providers.Google
-                            }
-                            irAMain()
-                        } catch (e: Exception) {
-                            Toast.makeText(this@LoginActivity, "Error Supabase: ${e.message}", Toast.LENGTH_LONG).show()
-                        }
-                    }
+                SupabaseClient.client.auth.signInWith(IDToken) {
+                    this.idToken = idToken
+                    provider = Google
                 }
+                irAMain()
             } catch (e: Exception) {
-
-                Toast.makeText(this, "Error de autenticación: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Error Supabase: ${e.message}", Toast.LENGTH_LONG).show()
             }
         }
     }
 
     private fun irAMain() {
         val intent = Intent(this@LoginActivity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
     }

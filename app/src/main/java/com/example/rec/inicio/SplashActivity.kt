@@ -12,28 +12,19 @@ import com.example.rec.auth.LoginActivity
 import com.example.rec.auth.RegistroActivity
 
 class SplashActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_splash)
 
-
         Handler(Looper.getMainLooper()).postDelayed({
-            setContentView(R.layout.fragment_home)
 
 
-            val btnComienza = findViewById<Button>(R.id.btn_comienza)
-            btnComienza.setOnClickListener {
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-            }
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
 
-
-            val tvRegistrate = findViewById<TextView>(R.id.tv_registrate)
-            tvRegistrate.setOnClickListener {
-                val intent = Intent(this, RegistroActivity::class.java)
-                startActivity(intent)
-            }
         }, 2000)
     }
 }

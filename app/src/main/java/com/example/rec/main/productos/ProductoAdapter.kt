@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rec.R
 import com.example.rec.productos.Producto
@@ -31,27 +31,27 @@ class ProductoAdapter(private val lista: List<Producto>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val p = lista[position]
+
         holder.nombre.text = p.nombre
         holder.precio.text = p.precio
         holder.img.setImageResource(p.imagen)
 
-        holder.btnAgregar.setOnClickListener {
-            val datos = Bundle().apply {
+        holder.btnAgregar.setOnClickListener { view ->
+
+
+            val bundle = Bundle().apply {
                 putString("p_nom", p.nombre)
                 putString("p_pre", p.precio)
                 putInt("p_img", p.imagen)
             }
 
-            val fragmento = CarritoFragment()
-            fragmento.arguments = datos
 
-            val activity = holder.itemView.context as AppCompatActivity
-            activity.supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragmento)
-                .addToBackStack(null)
-                .commit()
+            view.findNavController().navigate(
+                R.id.action_global_carritoFragment,
+                bundle
+            )
 
-            Toast.makeText(holder.itemView.context, "Añadido: ${p.nombre}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(view.context, "Añadido: ${p.nombre}", Toast.LENGTH_SHORT).show()
         }
     }
 

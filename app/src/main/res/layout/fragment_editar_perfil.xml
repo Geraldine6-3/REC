@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris_fondo"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/editar_perfil"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/iv_foto_perfil_edit"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/user" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_cambiar_foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:fabSize="mini"
+            app:srcCompat="@android:drawable/ic_menu_camera"
+            app:tint="@color/white"
+            android:backgroundTint="@color/rojo_coral" />
+    </FrameLayout>
+
+    <!-- Campo Nombres -->
+    <EditText
+        android:id="@+id/et_editar_nombres"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="Nombres"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp" />
+
+    <!-- Campo Apellidos -->
+    <EditText
+        android:id="@+id/et_editar_apellidos"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/apellidos"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp" />
+
+    <!-- Campo Correo -->
+    <EditText
+        android:id="@+id/et_editar_correo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/correo_electronico"
+        android:inputType="textEmailAddress"
+        android:paddingStart="15dp" />
+
+    <!-- Campo Contraseña -->
+    <EditText
+        android:id="@+id/et_editar_contrasena"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/nueva_contrasena"
+        android:inputType="textPassword"
+        android:paddingStart="15dp" />
+
+    <!-- Campo Confirmar Contraseña  -->
+    <EditText
+        android:id="@+id/et_editar_recontrasena"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/confirmar_contrasena"
+        android:inputType="textPassword"
+        android:paddingStart="15dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Botón Guardar -->
+    <Button
+        android:id="@+id/btn_guardar_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/rojo_coral"
+        android:text="@string/guardar_cambios"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
